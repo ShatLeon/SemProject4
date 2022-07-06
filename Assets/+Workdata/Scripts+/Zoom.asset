@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 114f4adff47823d4aadb77159ef6731f, type: 3}
-  m_Name: South
+  m_Name: Zoom
   m_EditorClassIdentifier: 
   m_Data:
     m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Camera.ViewTypes.TopDown
-    m_ValueHashes: fcf5e006318ce1ea
-    m_ValuePositions: 0000000004000000
-    m_Values: cdcc4c3f000000000000003f0000803f
+    m_ValueHashes: 318ce1eafcf5e006
+    m_ValuePositions: 000000000c000000
+    m_Values: 0000803f0000003f00000000cdcc4c3f
     m_UnityObjects: []
     m_Version: 3.1
