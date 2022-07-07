@@ -13,6 +13,9 @@ public class RotateCamera : MonoBehaviour
     public bool eastDirection;
     public bool southDirection;
     public bool westDirection;
+    public bool zoomDirection;
+
+    public int lastState;
 
     // Start is called before the first frame update
     void Start()
@@ -36,110 +39,93 @@ public class RotateCamera : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E) && northDirection) //If camera is facing North and Rotate Right Button is pressed
             {
-                ChangeDirection(true, false, false, false, true, false, false, false);          
+                ChangeDirection(true, false, false, false, false);
+                lastState = 0;
             }
             else if (Input.GetKeyDown(KeyCode.E) && eastDirection == true)
             {
 
-                //ChangeDirection(true, false, false, false, false, true, false, false);
-
-                StateManager.SetState(gameObject, "East", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "North", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "South", true);//The State will swtich to face East
-                StateManager.SetState(gameObject, "West", false);//The State will swtich to face East
-                eastDirection = false;
-                northDirection = false;
-                southDirection = true;
-                westDirection = false;
-                SetTimer();
+                ChangeDirection(false, false, true, false, false) ;
+                lastState = 1;
             }
             else if (Input.GetKeyDown(KeyCode.E) && southDirection == true)
             {
-                StateManager.SetState(gameObject, "East", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "North", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "South", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "West", true);//The State will swtich to face East
-                eastDirection = false;
-                northDirection = false;
-                southDirection = false;
-                westDirection = true;
-                SetTimer();
+
+                ChangeDirection(false, false, false, true, false) ;
+                lastState = 2;
             }
             else if (Input.GetKeyDown(KeyCode.E) && westDirection == true)
             {
-                StateManager.SetState(gameObject, "East", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "North", true);//The State will swtich to face East
-                StateManager.SetState(gameObject, "South", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "West", false);//The State will swtich to face East
-                eastDirection = false;
-                northDirection = true;
-                southDirection = false;
-                westDirection = false;
-                SetTimer();
+                ChangeDirection(false, true, false, false, false) ;
+                lastState = 3;
             }
 
             else if (Input.GetKeyDown(KeyCode.Q) && northDirection == true)
             {
-                StateManager.SetState(gameObject, "East", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "North", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "South", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "West", true);//The State will swtich to face East
-                eastDirection = false;
-                northDirection = false;
-                southDirection = false;
-                westDirection = true;
-                SetTimer();
+                ChangeDirection(false, false, false, true, false) ;
+                lastState = 2;
             }
             else if (Input.GetKeyDown(KeyCode.Q) && eastDirection == true)
             {
-                StateManager.SetState(gameObject, "East", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "North", true);//The State will swtich to face East
-                StateManager.SetState(gameObject, "South", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "West", false);//The State will swtich to face East
-                eastDirection = false;
-                northDirection = true;
-                southDirection = false;
-                westDirection = false;
-                SetTimer();
+                ChangeDirection(false, true, false, false, false) ;
+                lastState = 3;
             }
             else if (Input.GetKeyDown(KeyCode.Q) && southDirection == true)
             {
-                StateManager.SetState(gameObject, "East", true);//The State will swtich to face East
-                StateManager.SetState(gameObject, "North", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "South", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "West", false);//The State will swtich to face East
-                eastDirection = true;
-                northDirection = false;
-                southDirection = false;
-                westDirection = false;
-                SetTimer();
+                ChangeDirection(true, false, false, false, false) ;
+                lastState = 0;
             }
             else if (Input.GetKeyDown(KeyCode.Q) && westDirection == true)
             {
-                StateManager.SetState(gameObject, "East", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "North", false);//The State will swtich to face East
-                StateManager.SetState(gameObject, "South", true);//The State will swtich to face East
-                StateManager.SetState(gameObject, "West", false);//The State will swtich to face East
-                eastDirection = false;
-                northDirection = false;
-                southDirection = true;
-                westDirection = false;
-                SetTimer();
+                ChangeDirection(false, false, true, false, false) ;
+                lastState = 1;
             }
         }
     }
 
-    void ChangeDirection(bool east, bool north, bool south, bool west, bool eastDir, bool northDir, bool southDir, bool westDir)
+    public void ChangeDirection(bool east, bool north, bool south, bool west, bool zoom)
     {
         StateManager.SetState(gameObject, "East", east);//The State will swtich to face East
         StateManager.SetState(gameObject, "North", north);//The State will swtich to face East
         StateManager.SetState(gameObject, "South", south);//The State will swtich to face East
         StateManager.SetState(gameObject, "West", west);//The State will swtich to face East
-        eastDirection = eastDir;
-        northDirection = northDir;
-        southDirection = southDir;
-        westDirection = westDir;
-        SetTimer();
+        StateManager.SetState(gameObject, "Zoom", zoom);//The State sill switch to face East
+        eastDirection = east;
+        northDirection = north;
+        southDirection = south;
+        westDirection = west;
+        zoomDirection = zoom;
+        
+    }
+
+    public void GetLastState()
+    {
+        switch (lastState)
+        {
+            case 0:
+                ChangeDirection(true, false, false, false, false) ;
+                break;
+
+            case 1:
+                ChangeDirection(false, false, true, false, false) ;
+                break;
+
+            case 2:
+                ChangeDirection(false, false, false, true, false) ;
+                break;
+
+            case 3:
+                ChangeDirection(false, true, false, false, false) ;
+                break;
+
+            case 4:
+                ChangeDirection(false, false, false, false, true) ;
+                break;
+        
+
+            default:
+                break;
+        }
     }
 }
 
