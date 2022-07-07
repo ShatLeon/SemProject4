@@ -549,9 +549,6 @@
     <Reference Include="Opsive.Shared.Inventory">
       <HintPath>Assets\Opsive\Shared\Inventory\Opsive.Shared.Inventory.dll</HintPath>
     </Reference>
-    <Reference Include="clipper_library">
-      <HintPath>Library\PackageCache\com.unity.cinemachine@2.8.6\Runtime\ThirdParty\clipper_library.dll</HintPath>
-    </Reference>
     <Reference Include="Opsive.Shared.Editor.Utility">
       <HintPath>Assets\Opsive\Shared\Editor\Utility\Opsive.Shared.Editor.Utility.dll</HintPath>
     </Reference>
@@ -1020,16 +1017,8 @@
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-    <Reference Include="Unity.TerrainTools">
-      <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
-=======
     <Reference Include="Unity.Services.Core">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
->>>>>>> a44aed9e43337be0cab35c14bcb4ffd29af96b9e
     </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
@@ -1040,17 +1029,11 @@
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Environments">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Services.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
