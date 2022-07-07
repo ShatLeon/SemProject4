@@ -10918,6 +10918,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3ff3e26bc96fbe6429af48c717b4220e, type: 2}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: displaySettings.dialogueUI
+      value: 
+      objectReference: {fileID: 101180, guid: e571da675cd5d5b49b52362a8c81fe74, type: 3}
+    - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.inputSettings.cancelConversation.key
       value: 0
       objectReference: {fileID: 0}
