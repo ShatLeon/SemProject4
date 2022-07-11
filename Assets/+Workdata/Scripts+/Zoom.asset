@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Data:
     m_ObjectType: Opsive.UltimateCharacterController.ThirdPersonController.Camera.ViewTypes.TopDown
-    m_ValueHashes: 318ce1eafcf5e006
-    m_ValuePositions: 000000000c000000
-    m_Values: 0000803f0000003f0000000000000040
+    m_ValueHashes: fcf5e006a18d541c318ce1ea
+    m_ValuePositions: 000000000400000008000000
+    m_Values: 0000003f0000004000000000cdcc4c3fcdcc4c3f
     m_UnityObjects: []
     m_Version: 3.1

@@ -14,6 +14,7 @@ public class RotateCamera : MonoBehaviour
     public bool southDirection;
     public bool westDirection;
     public bool zoomDirection;
+    public bool zoomBDirection;
 
     public int lastState;
 
@@ -39,62 +40,64 @@ public class RotateCamera : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E) && northDirection) //If camera is facing North and Rotate Right Button is pressed
             {
-                ChangeDirection(true, false, false, false, false);
+                ChangeDirection(true, false, false, false, false, false);
                 lastState = 0;
             }
             else if (Input.GetKeyDown(KeyCode.E) && eastDirection == true)
             {
 
-                ChangeDirection(false, false, true, false, false) ;
+                ChangeDirection(false, false, true, false, false, false) ;
                 lastState = 1;
             }
             else if (Input.GetKeyDown(KeyCode.E) && southDirection == true)
             {
 
-                ChangeDirection(false, false, false, true, false) ;
+                ChangeDirection(false, false, false, true, false, false) ;
                 lastState = 2;
             }
             else if (Input.GetKeyDown(KeyCode.E) && westDirection == true)
             {
-                ChangeDirection(false, true, false, false, false) ;
+                ChangeDirection(false, true, false, false, false, false) ;
                 lastState = 3;
             }
 
             else if (Input.GetKeyDown(KeyCode.Q) && northDirection == true)
             {
-                ChangeDirection(false, false, false, true, false) ;
+                ChangeDirection(false, false, false, true, false, false) ;
                 lastState = 2;
             }
             else if (Input.GetKeyDown(KeyCode.Q) && eastDirection == true)
             {
-                ChangeDirection(false, true, false, false, false) ;
+                ChangeDirection(false, true, false, false, false, false) ;
                 lastState = 3;
             }
             else if (Input.GetKeyDown(KeyCode.Q) && southDirection == true)
             {
-                ChangeDirection(true, false, false, false, false) ;
+                ChangeDirection(true, false, false, false, false, false) ;
                 lastState = 0;
             }
             else if (Input.GetKeyDown(KeyCode.Q) && westDirection == true)
             {
-                ChangeDirection(false, false, true, false, false) ;
+                ChangeDirection(false, false, true, false, false, false) ;
                 lastState = 1;
             }
         }
     }
 
-    public void ChangeDirection(bool east, bool north, bool south, bool west, bool zoom)
+    public void ChangeDirection(bool east, bool north, bool south, bool west, bool zoom, bool bridge)
     {
         StateManager.SetState(gameObject, "East", east);//The State will swtich to face East
         StateManager.SetState(gameObject, "North", north);//The State will swtich to face East
         StateManager.SetState(gameObject, "South", south);//The State will swtich to face East
         StateManager.SetState(gameObject, "West", west);//The State will swtich to face East
         StateManager.SetState(gameObject, "Zoom", zoom);//The State sill switch to face East
+        StateManager.SetState(gameObject, "ZoomB", bridge);
         eastDirection = east;
         northDirection = north;
         southDirection = south;
         westDirection = west;
         zoomDirection = zoom;
+        zoomBDirection = bridge;
         
     }
 
@@ -103,23 +106,23 @@ public class RotateCamera : MonoBehaviour
         switch (lastState)
         {
             case 0:
-                ChangeDirection(true, false, false, false, false) ;
+                ChangeDirection(true, false, false, false, false, false) ;
                 break;
 
             case 1:
-                ChangeDirection(false, false, true, false, false) ;
+                ChangeDirection(false, false, true, false, false, false) ;
                 break;
 
             case 2:
-                ChangeDirection(false, false, false, true, false) ;
+                ChangeDirection(false, false, false, true, false, false) ;
                 break;
 
             case 3:
-                ChangeDirection(false, true, false, false, false) ;
+                ChangeDirection(false, true, false, false, false, false) ;
                 break;
 
             case 4:
-                ChangeDirection(false, false, false, false, true) ;
+                ChangeDirection(false, false, false, false, true, false) ;
                 break;
         
 

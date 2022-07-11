@@ -12,7 +12,7 @@ public class MapBehaviour : MonoBehaviour
 
         if (col.gameObject.CompareTag("Player"))
         {
-            col.GetComponent<CharacterComponents>().rotateCamera.ChangeDirection(false, false, false, false, true);
+            col.GetComponent<CharacterComponents>().rotateCamera.ChangeDirection(false, false, false, false, true, false);
         }
 
     }
