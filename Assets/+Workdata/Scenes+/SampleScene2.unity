@@ -8324,7 +8324,7 @@ MonoBehaviour:
   barker: {fileID: 336179661}
   barkTarget: {fileID: 0}
   barkOrder: 0
-  allowBarksDuringConversations: 0
+  allowBarksDuringConversations: 1
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
   conversation: 
@@ -11747,7 +11747,7 @@ MonoBehaviour:
   stopConversationIfTooFar: 0
   maxConversationDistance: 5
   monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
+  showCursorDuringConversation: 1
   pauseGameDuringConversation: 0
   setActiveActions:
   - condition:
@@ -15303,7 +15303,7 @@ MonoBehaviour:
   barker: {fileID: 336179661}
   barkTarget: {fileID: 0}
   barkOrder: 0
-  allowBarksDuringConversations: 0
+  allowBarksDuringConversations: 1
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
   conversation: 
@@ -17151,6 +17151,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11424616, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: controlCursorState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424616, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: keyCodesToCheck.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -17576,7 +17580,7 @@ MonoBehaviour:
   barker: {fileID: 336179661}
   barkTarget: {fileID: 0}
   barkOrder: 0
-  allowBarksDuringConversations: 0
+  allowBarksDuringConversations: 1
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
   conversation: 
@@ -20801,7 +20805,7 @@ MonoBehaviour:
   stopConversationIfTooFar: 0
   maxConversationDistance: 5
   monitorConversationDistanceFrequency: 1
-  showCursorDuringConversation: 0
+  showCursorDuringConversation: 1
   pauseGameDuringConversation: 0
   setActiveActions:
   - condition:

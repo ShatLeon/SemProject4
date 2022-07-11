@@ -3543,7 +3543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a44b96aa95563e4dbd81da44328a697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSelected: {fileID: 0}
+  firstSelected: {fileID: 164884}
   focusCheckFrequency: 0.2
   refreshSelectablesFrequency: 0.5
   selectPreviousOnDisable: 1
@@ -3580,7 +3580,7 @@ MonoBehaviour:
   scrollbarEnabler: {fileID: 0}
   buttonTemplateScrollbarResetValue: 1
   explicitNavigationForTemplateButtons: 1
-  loopExplicitNavigation: 0
+  loopExplicitNavigation: 1
   autonumber:
     enabled: 0
     regularNumberHotkeys: 1
